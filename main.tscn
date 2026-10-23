@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://cohpgm8nxrx3r"]
+
+[ext_resource type="Script" uid="uid://cer8gkdif501a" path="res://code/player.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dujm06kegxuk2" path="res://icon.svg" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://dh1dhi67wtvjn" path="res://code/kid.gd" id="3_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mltvj"]
+size = Vector2(131, 131)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_h2yge"]
+vertices = PackedVector2Array(978.8594, 882.90625, 810.85156, 863, 864, 863, 941, 42, 966.1953, 46.671875, 952, 48, 698, 547, 710.7578, 549.3672, 704, 550, 362, 570, -126.28125, 101.078125, -95.58594, 45.195313, -93, 191, -151.90625, 329.8203, 87, 37, 84.53906, -21.953125, 97.84375, -5.1328125, 1121, -112, 1120.0156, -135.5625, 1315.3672, 20.703125, 1110.3438, 49.671875, 1117, 50, -69, 658, -67.89844, 719.875, -91.046875, 709.1172, -118.14844, 556.2578, -77, 581, 437.98438, -64.03125, 428, 45, 356, 125, 234, 119, 692, 681, 609, 662, 694.9922, 849.8906, 612.52344, 843.52344, 615, 806, 487, 656, 444, 660, 351, 737, 432, 791, 432.6797, 829.6328, 115.57031, 805.15625, 252, 737, 182, 724, 105.59375, 800.5156, 690, 116, 607, 217, 600.6719, 216.6875, 611, 60, 702, -15, 108, 529, 96.3125, 528.4219, 103, 427, 940, 179, 872, 249, 865.2422, 248.66406, 873, 131, 430, 346, 356, 426, 351.67188, 425.78125, 362, 269, 431, 214, 441.89844, 216.02344, 1013, 361, 869, 552, 867.53125, 551.9219, 878, 393, 943, 348, 605.33594, -75.78906, 740.27344, -83.046875, -62.195313, 583.7422, -80, 412, -68, 281, -23, 204, -25, 277, 97, 283, 76, 204, 179, 254, 613, 361, 693, 285, 703.33594, 286.91406, 695, 378, 602, 528, 182, 423, 190.9375, 424.65625, 179, 555, 1123, 194, 1446.0703, 235.92969, 1112, 361, 1458.8828, 666.28906, 1306.9766, 834.6328, 875, 696, 867, -13, 938.0625, -123.265625, 745, -19, 503, 528, 433, 515, 191, 123, 114, 673)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16), PackedInt32Array(17, 18, 19), PackedInt32Array(20, 17, 19, 21), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(14, 16, 27, 28, 29, 30), PackedInt32Array(9, 8, 31, 32), PackedInt32Array(31, 33, 34, 35), PackedInt32Array(31, 35, 32), PackedInt32Array(9, 32, 36), PackedInt32Array(9, 36, 37), PackedInt32Array(38, 9, 37, 39), PackedInt32Array(38, 39, 40, 41, 42), PackedInt32Array(43, 42, 41, 44), PackedInt32Array(45, 46, 47, 48, 49), PackedInt32Array(50, 51, 52), PackedInt32Array(5, 53, 54, 55, 56, 3), PackedInt32Array(57, 58, 59, 60, 61, 62), PackedInt32Array(63, 64, 65, 66, 67), PackedInt32Array(48, 68, 69, 49), PackedInt32Array(26, 70, 22), PackedInt32Array(71, 26, 25, 13), PackedInt32Array(72, 71, 13, 12), PackedInt32Array(72, 12, 73, 74), PackedInt32Array(75, 74, 73, 76, 77), PackedInt32Array(78, 79, 80, 81, 82), PackedInt32Array(52, 83, 84, 85, 50), PackedInt32Array(86, 21, 19, 87), PackedInt32Array(88, 86, 87, 89, 90), PackedInt32Array(63, 88, 90, 0, 2, 91), PackedInt32Array(63, 91, 64), PackedInt32Array(67, 66, 54, 53), PackedInt32Array(3, 56, 92, 93), PackedInt32Array(69, 93, 92, 94), PackedInt32Array(69, 94, 49), PackedInt32Array(46, 45, 79, 78), PackedInt32Array(82, 81, 6), PackedInt32Array(82, 6, 9, 95), PackedInt32Array(96, 95, 9), PackedInt32Array(96, 9, 58, 57), PackedInt32Array(61, 60, 29, 28), PackedInt32Array(14, 30, 97), PackedInt32Array(76, 14, 97, 77), PackedInt32Array(75, 77, 83, 52), PackedInt32Array(98, 50, 85, 43), PackedInt32Array(44, 98, 43)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(53, -78, -69, -24, -136, 98, -162, 330, -128, 558, -100, 716, 113, 815, 709, 861, 979, 893, 1312, 844, 1469, 670, 1456, 233, 1323, 14, 1098, -166, 739, -93, 460, -78, 102, -16)])
+
+[node name="Node2D" type="Node2D" unique_id=1131370972]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=391355045]
+position = Vector2(583, 344)
+script = ExtResource("1_ig7tw")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D" unique_id=1692503026]
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1984294908]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_mltvj")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1712482800]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="Kid" type="CharacterBody2D" parent="." unique_id=1060989642 node_paths=PackedStringArray("Player", "navAgent")]
+position = Vector2(1022, 460)
+script = ExtResource("3_h2yge")
+Player = NodePath("../CharacterBody2D")
+navAgent = NodePath("NavigationAgent2D")
+
+[node name="Icon2" type="Sprite2D" parent="Kid" unique_id=801190242]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Kid" unique_id=391376417]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_mltvj")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Kid" unique_id=358760637]
+debug_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=90965381]
+navigation_polygon = SubResource("NavigationPolygon_h2yge")
+
+[node name="Icon" type="Sprite2D" parent="NavigationRegion2D" unique_id=594659900]
+position = Vector2(1033, 204.99997)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon" unique_id=264165673]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon2" type="Sprite2D" parent="NavigationRegion2D" unique_id=1346973388]
+position = Vector2(1031, -101)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon2" unique_id=720565811]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon3" type="Sprite2D" parent="NavigationRegion2D" unique_id=899476241]
+position = Vector2(788, 404)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon3" unique_id=1772626371]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon4" type="Sprite2D" parent="NavigationRegion2D" unique_id=320218934]
+position = Vector2(783.00006, 141.99997)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon4" unique_id=2006963404]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon5" type="Sprite2D" parent="NavigationRegion2D" unique_id=471637396]
+position = Vector2(785, 707)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon5" unique_id=769374017]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon6" type="Sprite2D" parent="NavigationRegion2D" unique_id=1118737683]
+position = Vector2(521, 71)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon6" unique_id=1345879552]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon7" type="Sprite2D" parent="NavigationRegion2D" unique_id=1137839310]
+position = Vector2(523.00006, 372)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon7" unique_id=425619718]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon8" type="Sprite2D" parent="NavigationRegion2D" unique_id=1237306481]
+position = Vector2(525, 817)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon8" unique_id=1183763400]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon9" type="Sprite2D" parent="NavigationRegion2D" unique_id=1731644514]
+position = Vector2(272, 581)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon9" unique_id=1918788687]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon10" type="Sprite2D" parent="NavigationRegion2D" unique_id=1457571409]
+position = Vector2(272.00003, 280)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon10" unique_id=158235066]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon11" type="Sprite2D" parent="NavigationRegion2D" unique_id=914293689]
+position = Vector2(-3, 48)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon11" unique_id=2143240150]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon12" type="Sprite2D" parent="NavigationRegion2D" unique_id=1551690574]
+position = Vector2(24, 684)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon12" unique_id=1761895048]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Icon13" type="Sprite2D" parent="NavigationRegion2D" unique_id=1732708384]
+position = Vector2(13.000002, 438)
+scale = Vector2(1.381051, 2.536038)
+texture = ExtResource("2_0xm2m")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Icon13" unique_id=1521401623]
+scale = Vector2(0.7240863, 0.39431587)
+radius = 2.0
+vertices = PackedVector2Array(-81, -157, -93, -26, -90, 143, -20, 156, 79, 156, 90, -11, 84, -155, -38, -161)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
