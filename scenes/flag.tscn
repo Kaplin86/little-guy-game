@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://de5nueqstwyst"]
+
+[ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="1_tjkec"]
+[ext_resource type="Texture2D" uid="uid://b5n37spslswxy" path="res://art/flag1.png" id="2_s5mf2"]
+[ext_resource type="Texture2D" uid="uid://caafh7ri72wer" path="res://art/flag2.png" id="3_7kq5u"]
+[ext_resource type="Script" uid="uid://b1rj7vx1pimh3" path="res://code/flag.gd" id="4_msxbw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nkeig"]
+shader = ExtResource("1_tjkec")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 2.0000000298024
+shader_parameter/alpha_threshold = 0.0
+shader_parameter/outline_samples = 4
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_mltvj"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("2_s5mf2")
+frame_1/texture = ExtResource("3_7kq5u")
+frame_1/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlghm"]
+size = Vector2(217, 212)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1160882992]
+material = SubResource("ShaderMaterial_nkeig")
+texture = SubResource("AnimatedTexture_mltvj")
+region_enabled = true
+region_rect = Rect2(-5.910263, -9.844, 213.20546, 218.21753)
+script = ExtResource("4_msxbw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=799543855]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2103268710]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_mlghm")

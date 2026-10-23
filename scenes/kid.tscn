@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://kg27lwxinu1m"]
+
+[ext_resource type="Script" uid="uid://dh1dhi67wtvjn" path="res://code/kid.gd" id="1_mnfw6"]
+[ext_resource type="Texture2D" uid="uid://dvvv2mwaucwpx" path="res://art/shadow.png" id="2_5xe0b"]
+[ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="3_hsv3e"]
+[ext_resource type="Texture2D" uid="uid://6wpc6182j01q" path="res://art/littleguy2.png" id="4_o6p4d"]
+[ext_resource type="Texture2D" uid="uid://ge2i5vmxg7r7" path="res://art/littleguy.png" id="5_6qa52"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4c57u"]
+shader = ExtResource("3_hsv3e")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 2.0000000298024
+shader_parameter/alpha_threshold = 0.0
+shader_parameter/outline_samples = 4
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_n00f0"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("4_o6p4d")
+frame_1/texture = ExtResource("5_6qa52")
+frame_1/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(124, 150)
+
+[node name="Kid" type="CharacterBody2D" unique_id=1531587368 node_paths=PackedStringArray("Player", "navAgent")]
+collision_layer = 2
+script = ExtResource("1_mnfw6")
+Player = NodePath("")
+navAgent = NodePath("NavigationAgent2D")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=207733151]
+position = Vector2(0, 48)
+scale = Vector2(0.5132377, 0.56474924)
+texture = ExtResource("2_5xe0b")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1230764350]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_4c57u")
+texture = SubResource("AnimatedTexture_n00f0")
+region_enabled = true
+region_rect = Rect2(-6.5667114, -6.82576, 87.518326, 109.87986)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1564258832]
+position = Vector2(0, 11.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1200867075]
+debug_enabled = true

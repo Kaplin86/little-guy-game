@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b4p7jvc4k80oc"]
+
+[ext_resource type="Script" uid="uid://cer8gkdif501a" path="res://code/player.gd" id="1_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://dvvv2mwaucwpx" path="res://art/shadow.png" id="2_tuyoq"]
+[ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="3_fjrip"]
+[ext_resource type="Texture2D" uid="uid://yq8o0pl6akiv" path="res://art/bigrobert.png" id="4_smehm"]
+[ext_resource type="Texture2D" uid="uid://bsuh2flc3m4ak" path="res://art/bigrobert2.png" id="5_ur7pv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efxa6"]
+shader = ExtResource("3_fjrip")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 3.0000000447036
+shader_parameter/alpha_threshold = 0.0
+shader_parameter/outline_samples = 4
+shader_parameter/shade_color = Color(0.0017823452, 0.0017823452, 0.0017823452, 0)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_lquwl"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("4_smehm")
+frame_1/texture = ExtResource("5_ur7pv")
+frame_1/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mltvj"]
+size = Vector2(105, 107)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=691653667]
+collision_layer = 2
+script = ExtResource("1_qlg0r")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1229841868]
+position = Vector2(1, 94)
+texture = ExtResource("2_tuyoq")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=2039104756]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_efxa6")
+texture = SubResource("AnimatedTexture_lquwl")
+region_enabled = true
+region_rect = Rect2(-7.0959167, -5.6119957, 199.70898, 215.86572)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1359910085]
+position = Vector2(0.5, 46.5)
+shape = SubResource("RectangleShape2D_mltvj")
