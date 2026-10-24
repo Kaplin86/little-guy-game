@@ -4,6 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://b5n37spslswxy" path="res://art/flag1.png" id="2_s5mf2"]
 [ext_resource type="Texture2D" uid="uid://caafh7ri72wer" path="res://art/flag2.png" id="3_7kq5u"]
 [ext_resource type="Script" uid="uid://b1rj7vx1pimh3" path="res://code/flag.gd" id="4_msxbw"]
+[ext_resource type="Texture2D" uid="uid://d0bww608n5kx8" path="res://art/confetti.png" id="5_s6cpg"]
+[ext_resource type="Script" uid="uid://dqfch3f62tewo" path="res://code/win_graphic.gd" id="5_suq27"]
+[ext_resource type="Texture2D" uid="uid://dvvv2mwaucwpx" path="res://art/shadow.png" id="6_s6cpg"]
+[ext_resource type="Texture2D" uid="uid://h0g4t53gfil8" path="res://art/w1.png" id="7_qfyfp"]
+[ext_resource type="Texture2D" uid="uid://lnl045qwdac2" path="res://art/w2.png" id="8_py37q"]
+[ext_resource type="Texture2D" uid="uid://do4r3nxdh7ef5" path="res://art/I1.png" id="9_4r2ai"]
+[ext_resource type="Texture2D" uid="uid://bcy0psy7h3ny7" path="res://art/I2.png" id="10_d3nnp"]
+[ext_resource type="Texture2D" uid="uid://bgdbuasvocqjm" path="res://art/N1.png" id="11_b4r82"]
+[ext_resource type="Texture2D" uid="uid://cnlhu8ubcpx5e" path="res://art/N2.png" id="12_wfq71"]
+[ext_resource type="AudioStream" uid="uid://d18jtkv5qi4el" path="res://sfx/kids_cheering.mp3" id="14_qfyfp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nkeig"]
 shader = ExtResource("1_tjkec")
@@ -23,6 +33,35 @@ frame_1/duration = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlghm"]
 size = Vector2(217, 212)
 
+[sub_resource type="Gradient" id="Gradient_1seuy"]
+offsets = PackedFloat32Array(0, 0.9166667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_mlghm"]
+offsets = PackedFloat32Array(0, 0.19871795, 0.20512821, 0.41025642, 0.42948717, 0.64102566, 0.6474359, 0.8397436, 0.8525641, 1)
+colors = PackedColorArray(0.85882354, 0.5882353, 0.57254905, 1, 0.85882354, 0.5882353, 0.57254905, 1, 0.8627451, 0.6862745, 0.56078434, 1, 0.8627451, 0.6862745, 0.56078434, 1, 0.85882354, 0.8509804, 0.5686275, 1, 0.85882354, 0.8509804, 0.5686275, 1, 0.5882353, 0.85882354, 0.5686275, 1, 0.5882353, 0.85882354, 0.5686275, 1, 0.5686275, 0.5882353, 0.85882354, 1, 0.5686275, 0.5882353, 0.85882354, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_7jlf1"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("7_qfyfp")
+frame_1/texture = ExtResource("8_py37q")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_hgrmx"]
+frames = 2
+speed_scale = 3.4
+frame_0/texture = ExtResource("9_4r2ai")
+frame_1/texture = ExtResource("10_d3nnp")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_lq2p3"]
+frames = 2
+speed_scale = 2.7
+frame_0/texture = ExtResource("11_b4r82")
+frame_1/texture = ExtResource("12_wfq71")
+frame_1/duration = 1.0
+
 [node name="Sprite2D" type="Sprite2D" unique_id=1160882992]
 material = SubResource("ShaderMaterial_nkeig")
 texture = SubResource("AnimatedTexture_mltvj")
@@ -31,7 +70,56 @@ region_rect = Rect2(-5.910263, -9.844, 213.20546, 218.21753)
 script = ExtResource("4_msxbw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=799543855]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2103268710]
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_mlghm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1867842704]
+visible = false
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer" unique_id=828836052]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer/Node2D" unique_id=174486359]
+position = Vector2(588, 319)
+amount = 200
+texture = ExtResource("5_s6cpg")
+lifetime = 3.5
+emission_shape = 3
+emission_rect_extents = Vector2(183.965, 1)
+direction = Vector2(0, -1)
+spread = 19.15
+gravity = Vector2(0, 200)
+initial_velocity_min = 186.28
+initial_velocity_max = 284.31
+color_ramp = SubResource("Gradient_1seuy")
+color_initial_ramp = SubResource("Gradient_mlghm")
+
+[node name="Shadow" type="Sprite2D" parent="CanvasLayer/Node2D" unique_id=1550117108]
+position = Vector2(579, 316)
+scale = Vector2(3.9377322, 3.6363513)
+texture = ExtResource("6_s6cpg")
+
+[node name="WinGraphic" type="Node2D" parent="CanvasLayer/Node2D" unique_id=458905330]
+position = Vector2(595, 320)
+script = ExtResource("5_suq27")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Node2D/WinGraphic" unique_id=1345738007]
+position = Vector2(-119, -8)
+texture = SubResource("AnimatedTexture_7jlf1")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/Node2D/WinGraphic" unique_id=851766386]
+texture = SubResource("AnimatedTexture_hgrmx")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer/Node2D/WinGraphic" unique_id=1939371711]
+position = Vector2(86, 2)
+texture = SubResource("AnimatedTexture_lq2p3")
+
+[node name="KidsCheering" type="AudioStreamPlayer" parent="CanvasLayer/Node2D" unique_id=1920181005]
+stream = ExtResource("14_qfyfp")
+volume_db = -7.298
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

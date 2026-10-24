@@ -5,14 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://kg27lwxinu1m" path="res://scenes/kid.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://b4p7jvc4k80oc" path="res://scenes/player.tscn" id="4_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://de5nueqstwyst" path="res://scenes/flag.tscn" id="5_1seuy"]
-[ext_resource type="Texture2D" uid="uid://h0g4t53gfil8" path="res://art/w1.png" id="7_8a7m2"]
-[ext_resource type="Script" uid="uid://dqfch3f62tewo" path="res://code/win_graphic.gd" id="7_lgguw"]
 [ext_resource type="Script" uid="uid://dko4imgsdjshj" path="res://code/camera.gd" id="8_5ntmo"]
-[ext_resource type="Texture2D" uid="uid://lnl045qwdac2" path="res://art/w2.png" id="8_plydf"]
-[ext_resource type="Texture2D" uid="uid://do4r3nxdh7ef5" path="res://art/I1.png" id="10_jprdt"]
-[ext_resource type="Texture2D" uid="uid://bcy0psy7h3ny7" path="res://art/I2.png" id="11_ps2vj"]
-[ext_resource type="Texture2D" uid="uid://bgdbuasvocqjm" path="res://art/N1.png" id="12_sbmf2"]
-[ext_resource type="Texture2D" uid="uid://cnlhu8ubcpx5e" path="res://art/N2.png" id="13_1xax6"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_bfxgj"]
 frames = 2
@@ -28,27 +21,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-559, -42, -557, 1172, 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mltvj"]
 size = Vector2(36.00009, 2203)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_mlghm"]
-frames = 2
-speed_scale = 3.0
-frame_0/texture = ExtResource("7_8a7m2")
-frame_1/texture = ExtResource("8_plydf")
-frame_1/duration = 1.0
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_5ntmo"]
-frames = 2
-speed_scale = 3.4
-frame_0/texture = ExtResource("10_jprdt")
-frame_1/texture = ExtResource("11_ps2vj")
-frame_1/duration = 1.0
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_nkeig"]
-frames = 2
-speed_scale = 2.7
-frame_0/texture = ExtResource("12_sbmf2")
-frame_1/texture = ExtResource("13_1xax6")
-frame_1/duration = 1.0
 
 [node name="Node2D" type="Node2D" unique_id=351991817]
 y_sort_enabled = true
@@ -70,7 +42,7 @@ Player = NodePath("../CharacterBody2D")
 position = Vector2(496, 822)
 
 [node name="Sprite2D" parent="." unique_id=1160882992 instance=ExtResource("5_1seuy")]
-position = Vector2(481, 160)
+position = Vector2(479, 177)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=381146985 node_paths=PackedStringArray("target")]
 position = Vector2(516, 524)
@@ -106,18 +78,3 @@ shape = SubResource("RectangleShape2D_mltvj")
 position = Vector2(508, 1188)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_mltvj")
-
-[node name="WinGraphic" type="Node2D" parent="." unique_id=1729390976]
-position = Vector2(166, -414)
-script = ExtResource("7_lgguw")
-
-[node name="Sprite2D3" type="Sprite2D" parent="WinGraphic" unique_id=1563426424]
-position = Vector2(-119, -8)
-texture = SubResource("AnimatedTexture_mlghm")
-
-[node name="Sprite2D4" type="Sprite2D" parent="WinGraphic" unique_id=1289532224]
-texture = SubResource("AnimatedTexture_5ntmo")
-
-[node name="Sprite2D5" type="Sprite2D" parent="WinGraphic" unique_id=791289991]
-position = Vector2(86, 2)
-texture = SubResource("AnimatedTexture_nkeig")

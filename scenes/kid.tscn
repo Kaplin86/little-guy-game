@@ -21,13 +21,13 @@ frame_0/texture = ExtResource("4_o6p4d")
 frame_1/texture = ExtResource("5_6qa52")
 frame_1/duration = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
-size = Vector2(124, 150)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xe0b"]
+radius = 44.0
+height = 142.0
 
-[node name="Kid" type="CharacterBody2D" unique_id=1531587368 node_paths=PackedStringArray("Player", "navAgent")]
+[node name="Kid" type="CharacterBody2D" unique_id=1531587368 node_paths=PackedStringArray("navAgent")]
 collision_layer = 2
 script = ExtResource("1_mnfw6")
-Player = NodePath("")
 navAgent = NodePath("NavigationAgent2D")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=207733151]
@@ -46,7 +46,8 @@ region_rect = Rect2(-6.5667114, -6.82576, 87.518326, 109.87986)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1564258832]
 position = Vector2(0, 11.5)
 scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_kek77")
+shape = SubResource("CapsuleShape2D_5xe0b")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1200867075]
+path_return_max_radius = 10.0
 debug_enabled = true

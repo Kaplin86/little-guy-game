@@ -1,11 +1,12 @@
 extends CharacterBody2D
+class_name KidNode
 
 @export var Player : CharacterBody2D
 @export var navAgent : NavigationAgent2D
 
 enum Modes {Wander, Follow, StayPut}
 
-var Mode : Modes = 1
+var Mode : Modes = Modes.Follow
 
 var TimePassedWander = 0.0
 var TargetLocation : Vector2 = Vector2.ZERO
