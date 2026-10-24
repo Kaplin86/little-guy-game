@@ -1,18 +1,11 @@
 [gd_scene format=3 uid="uid://cr6nih8flfxh8"]
 
-[ext_resource type="Texture2D" uid="uid://cp7g7oaax2lb8" path="res://art/lawn1.png" id="1_4tcl0"]
-[ext_resource type="Texture2D" uid="uid://cffxyuw07qno8" path="res://art/lawn2.png" id="2_dd0lh"]
+[ext_resource type="Texture2D" uid="uid://drio0x6bouquc" path="res://art/ground.tres" id="1_1seuy"]
 [ext_resource type="PackedScene" uid="uid://kg27lwxinu1m" path="res://scenes/kid.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://b4p7jvc4k80oc" path="res://scenes/player.tscn" id="4_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://de5nueqstwyst" path="res://scenes/flag.tscn" id="5_1seuy"]
+[ext_resource type="Texture2D" uid="uid://dgi8ibyti8mr6" path="res://art/bigroberthead.png" id="7_2r1tl"]
 [ext_resource type="Script" uid="uid://dko4imgsdjshj" path="res://code/camera.gd" id="8_5ntmo"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_bfxgj"]
-frames = 2
-speed_scale = 3.0
-frame_0/texture = ExtResource("1_4tcl0")
-frame_1/texture = ExtResource("2_dd0lh")
-frame_1/duration = 1.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8a7m2"]
 vertices = PackedVector2Array(1586, 1169.9609, -547.0078, 1162.0313, -548.97656, -32, 1586, -33.992188)
@@ -21,6 +14,17 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-559, -42, -557, 1172, 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mltvj"]
 size = Vector2(36.00009, 2203)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8a7m2"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 131
+corner_radius_top_right = 131
+corner_radius_bottom_left = 131
+corner_detail = 5
 
 [node name="Node2D" type="Node2D" unique_id=351991817]
 y_sort_enabled = true
@@ -31,7 +35,7 @@ offset_left = -582.0
 offset_top = -54.0
 offset_right = 1612.0
 offset_bottom = 1208.0
-texture = SubResource("AnimatedTexture_bfxgj")
+texture = ExtResource("1_1seuy")
 stretch_mode = 1
 
 [node name="Kid" parent="." unique_id=1531587368 node_paths=PackedStringArray("Player") instance=ExtResource("3_1seuy")]
@@ -43,6 +47,7 @@ position = Vector2(496, 822)
 
 [node name="Sprite2D" parent="." unique_id=1160882992 instance=ExtResource("5_1seuy")]
 position = Vector2(479, 177)
+destinationScene = "res://scenes/levels/level2.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=381146985 node_paths=PackedStringArray("target")]
 position = Vector2(516, 524)
@@ -78,3 +83,99 @@ shape = SubResource("RectangleShape2D_mltvj")
 position = Vector2(508, 1188)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_mltvj")
+
+[node name="Control" type="Panel" parent="." unique_id=160792227]
+z_index = 2
+offset_left = 804.0
+offset_top = 592.0
+offset_right = 1328.0
+offset_bottom = 918.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8a7m2")
+
+[node name="Label" type="RichTextLabel" parent="Control" unique_id=413496074]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 34.0
+offset_right = 501.0
+offset_bottom = 333.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "HELLO  [img]res://art/bigroberthead.png[/img][color=#DCAF8F]BIG ROBERT.[/color]
+
+USE [color=#DBDA8F]WASD[/color] TO MOVE
+
+PRESS [color=#DBDA8F]Q[/color] TO CONTROL [img]res://art/littleguyhead.png[/img][color=#92B5DB]KID[/color]
+
+"
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=2085838117]
+position = Vector2(17, 85)
+
+[node name="Bigroberthead" type="Sprite2D" parent="CanvasGroup" unique_id=382569349]
+position = Vector2(1369, 875)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead2" type="Sprite2D" parent="CanvasGroup" unique_id=1395244818]
+position = Vector2(1370, 911)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead3" type="Sprite2D" parent="CanvasGroup" unique_id=915253094]
+position = Vector2(1371, 946)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead4" type="Sprite2D" parent="CanvasGroup" unique_id=141649576]
+position = Vector2(1413, 911)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead5" type="Sprite2D" parent="CanvasGroup" unique_id=348228005]
+position = Vector2(1329, 911)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead6" type="Sprite2D" parent="CanvasGroup" unique_id=1573793841]
+position = Vector2(1338, 984)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead7" type="Sprite2D" parent="CanvasGroup" unique_id=1328496706]
+position = Vector2(1403, 979)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead8" type="Sprite2D" parent="CanvasGroup" unique_id=986397864]
+position = Vector2(1371, 838)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead9" type="Sprite2D" parent="CanvasGroup" unique_id=1207497798]
+position = Vector2(1401, 854)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead10" type="Sprite2D" parent="CanvasGroup" unique_id=1563395965]
+position = Vector2(1399, 822)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead11" type="Sprite2D" parent="CanvasGroup" unique_id=291242280]
+position = Vector2(1375, 810)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead12" type="Sprite2D" parent="CanvasGroup" unique_id=1883111010]
+position = Vector2(1344, 825)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead13" type="Sprite2D" parent="CanvasGroup" unique_id=466835007]
+position = Vector2(1350, 856)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead14" type="Sprite2D" parent="CanvasGroup" unique_id=772768212]
+position = Vector2(1447, 930)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead15" type="Sprite2D" parent="CanvasGroup" unique_id=1912511453]
+position = Vector2(1300, 925)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead16" type="Sprite2D" parent="CanvasGroup" unique_id=1930733680]
+position = Vector2(1326, 1023)
+texture = ExtResource("7_2r1tl")
+
+[node name="Bigroberthead17" type="Sprite2D" parent="CanvasGroup" unique_id=1327370992]
+position = Vector2(1417, 1016)
+texture = ExtResource("7_2r1tl")

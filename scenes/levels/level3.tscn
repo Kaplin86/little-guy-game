@@ -1,0 +1,435 @@
+[gd_scene format=3 uid="uid://bu0sarrce0wuv"]
+
+[ext_resource type="Texture2D" uid="uid://drio0x6bouquc" path="res://art/ground.tres" id="1_hadiw"]
+[ext_resource type="PackedScene" uid="uid://kg27lwxinu1m" path="res://scenes/kid.tscn" id="2_72x3h"]
+[ext_resource type="PackedScene" uid="uid://b4p7jvc4k80oc" path="res://scenes/player.tscn" id="3_wb0vq"]
+[ext_resource type="PackedScene" uid="uid://de5nueqstwyst" path="res://scenes/flag.tscn" id="4_ah4rv"]
+[ext_resource type="Script" uid="uid://dko4imgsdjshj" path="res://code/camera.gd" id="5_522sc"]
+[ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="6_a82vw"]
+[ext_resource type="Texture2D" uid="uid://b0ljob2iyjfi" path="res://art/anti-robotbrocoli1.png" id="7_t14x3"]
+[ext_resource type="Texture2D" uid="uid://cv25o1b1pwy7y" path="res://art/fence1.png" id="8_ahaer"]
+[ext_resource type="Texture2D" uid="uid://6bna7gh86st2" path="res://art/fence2.png" id="9_wt4k6"]
+[ext_resource type="Texture2D" uid="uid://bhmduoula4lsi" path="res://art/broccoli1.png" id="10_wo5bm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8i1lk"]
+shader = ExtResource("6_a82vw")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 32.0
+shader_parameter/alpha_threshold = 0.0
+shader_parameter/outline_samples = 4
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1h7o1"]
+size = Vector2(71, 67)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8a7m2"]
+vertices = PackedVector2Array(-547.0078, 1162.0313, -547.28906, 990, -199, 990, -199, 996, 1586, 1169.9609, -141, 996, 54, 275, 87, 275, 87, 312, 47, 312, 47, 399, 102, 399, 102, 415, 51, 415, 51, 477, -223, 477, -548.5703, 219, 1036, 477, 142, 477, 142, 447, 193, 447, 193, 360, 138, 360, 138, 334, 178, 334, 178, 247, 145, 247, 145, 219, 1586, 219, 360, 782, 1586, 782, 619, 940, -141, 990, 619, 990, -141, 940, -141, 733, -199, 733, -199, 940, -547.3906, 940, -223, 527, 54, 219, 1586, 732, 1036, 527, 360, 732, 1586, 169, -548.64844, 169, -548.97656, -32, 1586, -33.992188)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(10, 13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(29, 30, 4, 31), PackedInt32Array(5, 32, 33, 4), PackedInt32Array(31, 34, 35, 29), PackedInt32Array(36, 37, 38, 16, 39), PackedInt32Array(16, 40, 6, 9), PackedInt32Array(21, 24, 25, 28, 17), PackedInt32Array(17, 20, 21), PackedInt32Array(17, 28, 41, 42), PackedInt32Array(42, 41, 43, 39), PackedInt32Array(16, 9, 10), PackedInt32Array(4, 33, 31), PackedInt32Array(43, 29, 35, 39), PackedInt32Array(39, 35, 36), PackedInt32Array(16, 15, 39), PackedInt32Array(44, 45, 46, 47)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-559, -42, -557, 1172, 1596, 1180, 1596, -44)])
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_mltvj"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("8_ahaer")
+frame_1/texture = ExtResource("9_wt4k6")
+frame_1/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlghm"]
+size = Vector2(1239, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyk6k"]
+size = Vector2(38, 243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mltvj"]
+size = Vector2(36.00009, 2203)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyk6k"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 131
+corner_radius_top_right = 131
+corner_radius_bottom_right = 131
+corner_radius_bottom_left = 131
+corner_detail = 5
+
+[node name="Node2D" type="Node2D" unique_id=351991817]
+y_sort_enabled = true
+
+[node name="Sprite2D2" type="TextureRect" parent="." unique_id=1700100551]
+z_index = -2
+texture_repeat = 2
+offset_left = -582.0
+offset_top = -54.0
+offset_right = 1612.0
+offset_bottom = 1208.0
+texture = ExtResource("1_hadiw")
+stretch_mode = 1
+
+[node name="Kid" parent="." unique_id=1531587368 node_paths=PackedStringArray("Player") instance=ExtResource("2_72x3h")]
+position = Vector2(-444, 1083)
+Player = NodePath("../CharacterBody2D")
+
+[node name="CharacterBody2D" parent="." unique_id=691653667 instance=ExtResource("3_wb0vq")]
+position = Vector2(-263, 1019)
+
+[node name="Sprite2D" parent="." unique_id=1160882992 instance=ExtResource("4_ah4rv")]
+position = Vector2(-379, 723)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=381146985 node_paths=PackedStringArray("target")]
+position = Vector2(516, 524)
+zoom = Vector2(0.535, 0.535)
+limit_left = -296
+limit_top = -2
+limit_right = 1334
+limit_bottom = 1130
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+script = ExtResource("5_522sc")
+target = NodePath("../CharacterBody2D")
+
+[node name="Broc6" type="StaticBody2D" parent="." unique_id=597214957]
+position = Vector2(-186, 537)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Broccoli1" type="Sprite2D" parent="Broc6" unique_id=531832466]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("7_t14x3")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Broc6" unique_id=349196795]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="Broc7" type="StaticBody2D" parent="." unique_id=987524840]
+position = Vector2(-137, 574)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Broccoli1" type="Sprite2D" parent="Broc7" unique_id=169996919]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("7_t14x3")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Broc7" unique_id=553707096]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="Broc8" type="StaticBody2D" parent="." unique_id=393358467]
+position = Vector2(-176, 622)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Broccoli1" type="Sprite2D" parent="Broc8" unique_id=434544827]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("7_t14x3")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Broc8" unique_id=762234821]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="Broc9" type="StaticBody2D" parent="." unique_id=2050701081]
+position = Vector2(-137, 665)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Broccoli1" type="Sprite2D" parent="Broc9" unique_id=1455928548]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("7_t14x3")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Broc9" unique_id=716024934]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="Broc10" type="StaticBody2D" parent="." unique_id=1159450800]
+position = Vector2(-172, 710)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Broccoli1" type="Sprite2D" parent="Broc10" unique_id=1926625128]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("7_t14x3")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Broc10" unique_id=1682811043]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=507092785]
+navigation_polygon = SubResource("NavigationPolygon_8a7m2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D" unique_id=1076127054]
+position = Vector2(-10, 960)
+
+[node name="TextureRect" type="TextureRect" parent="NavigationRegion2D/StaticBody2D" unique_id=186301868]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.0
+offset_top = -48.0
+offset_right = 618.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AnimatedTexture_mltvj")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" unique_id=746217684]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_mlghm")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="NavigationRegion2D" unique_id=179530819]
+position = Vector2(990, 752)
+
+[node name="TextureRect" type="TextureRect" parent="NavigationRegion2D/StaticBody2D2" unique_id=1976030213]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.0
+offset_top = -48.0
+offset_right = 618.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AnimatedTexture_mltvj")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D2" unique_id=909269866]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_mlghm")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="NavigationRegion2D" unique_id=235059257]
+position = Vector2(407, 497)
+
+[node name="TextureRect" type="TextureRect" parent="NavigationRegion2D/StaticBody2D3" unique_id=1257139331]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.0
+offset_top = -48.0
+offset_right = 618.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AnimatedTexture_mltvj")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D3" unique_id=614105474]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_mlghm")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="NavigationRegion2D" unique_id=239196496]
+position = Vector2(1001, 189)
+
+[node name="TextureRect" type="TextureRect" parent="NavigationRegion2D/StaticBody2D4" unique_id=802019522]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.0
+offset_top = -48.0
+offset_right = 618.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AnimatedTexture_mltvj")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D4" unique_id=1354250959]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_mlghm")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="NavigationRegion2D" unique_id=1774346892]
+position = Vector2(-232, 189)
+
+[node name="TextureRect" type="TextureRect" parent="NavigationRegion2D/StaticBody2D5" unique_id=101265572]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.0
+offset_top = -48.0
+offset_right = 618.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AnimatedTexture_mltvj")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D5" unique_id=2105628618]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_mlghm")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="NavigationRegion2D" unique_id=5235342]
+z_index = -1
+position = Vector2(-165, 642)
+
+[node name="TextureRect" type="TextureRect" parent="NavigationRegion2D/StaticBody2D6" unique_id=1448064826]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = 79.0
+offset_right = 51.5
+offset_bottom = 368.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AnimatedTexture_mltvj")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D6" unique_id=914275329]
+position = Vector2(-5, 222.5)
+shape = SubResource("RectangleShape2D_oyk6k")
+
+[node name="Broc" type="StaticBody2D" parent="NavigationRegion2D" unique_id=2078921739]
+position = Vector2(99, 232)
+collision_layer = 4
+collision_mask = 4
+
+[node name="Broccoli1" type="Sprite2D" parent="NavigationRegion2D/Broc" unique_id=656472634]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("10_wo5bm")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Broc" unique_id=1734203400]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="Broc2" type="StaticBody2D" parent="NavigationRegion2D" unique_id=2008899433]
+position = Vector2(132, 291)
+collision_layer = 4
+collision_mask = 4
+
+[node name="Broccoli1" type="Sprite2D" parent="NavigationRegion2D/Broc2" unique_id=873001209]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("10_wo5bm")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Broc2" unique_id=1006385965]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="Broc3" type="StaticBody2D" parent="NavigationRegion2D" unique_id=1147612994]
+position = Vector2(92, 356)
+collision_layer = 4
+collision_mask = 4
+
+[node name="Broccoli1" type="Sprite2D" parent="NavigationRegion2D/Broc3" unique_id=399618972]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("10_wo5bm")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Broc3" unique_id=1658964228]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="Broc4" type="StaticBody2D" parent="NavigationRegion2D" unique_id=2137685298]
+position = Vector2(147, 404)
+collision_layer = 4
+collision_mask = 4
+
+[node name="Broccoli1" type="Sprite2D" parent="NavigationRegion2D/Broc4" unique_id=1600979929]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("10_wo5bm")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Broc4" unique_id=1867598718]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="Broc5" type="StaticBody2D" parent="NavigationRegion2D" unique_id=192922517]
+position = Vector2(96, 459)
+collision_layer = 4
+collision_mask = 4
+
+[node name="Broccoli1" type="Sprite2D" parent="NavigationRegion2D/Broc5" unique_id=2069773552]
+material = SubResource("ShaderMaterial_8i1lk")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("10_wo5bm")
+region_enabled = true
+region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Broc5" unique_id=128282797]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1h7o1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1668380513]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=495019443]
+position = Vector2(-560, 625)
+shape = SubResource("RectangleShape2D_mltvj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=233298493]
+position = Vector2(1601, 535)
+shape = SubResource("RectangleShape2D_mltvj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1811022807]
+position = Vector2(521.5, 41)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_mltvj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=857009646]
+position = Vector2(508, 1188)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_mltvj")
+
+[node name="Control" type="Panel" parent="." unique_id=1953641202]
+z_index = 2
+offset_left = -540.0
+offset_top = 64.0
+offset_right = 1546.0
+offset_bottom = 141.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oyk6k")
+
+[node name="Label" type="RichTextLabel" parent="Control" unique_id=1848002336]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[img]res://art/littleguyhead.png[/img][color=#92B5DB]KID[/color] HATES BROCOLLI, AND [img]res://art/bigroberthead.png[/img][color=#DCAF8F]BIG ROBERT[/color] IS AFRAID OF PURPLE APPARENTLY. "
+horizontal_alignment = 1
+vertical_alignment = 1

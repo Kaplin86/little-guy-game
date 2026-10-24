@@ -4,7 +4,7 @@ class_name KidNode
 @export var Player : CharacterBody2D
 @export var navAgent : NavigationAgent2D
 
-enum Modes {Wander, Follow, StayPut}
+enum Modes {Follow, StayPut}
 
 var Mode : Modes = Modes.Follow
 
@@ -24,10 +24,10 @@ func _process(delta):
 	walkDT += delta * (speed * 0.02)
 	
 	if Input.is_action_just_pressed("command"):
-		Mode = wrap(Mode + 1, 0, 3)
+		Mode = wrap(Mode + 1, 0, 2)
 		print(Mode as Modes)
 	
-	if Mode == Modes.Wander:
+	if Mode == INF:
 		TimePassedWander += delta
 		if randi_range(0,TimePassedWander) > 2:
 			TargetLocation = global_position + Vector2(randi_range(-50,50),randi_range(-50,50))
@@ -41,6 +41,7 @@ func _process(delta):
 	
 	navAgent.target_position = TargetLocation
 	var pos = navAgent.get_next_path_position()
+	print(pos)
 	velocity = global_position.direction_to(pos) * (min(speed * delta,global_position.distance_to(pos)) / delta)
 	move_and_slide()
 	
