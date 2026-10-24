@@ -415,7 +415,7 @@ shape = SubResource("RectangleShape2D_mltvj")
 [node name="Control" type="Panel" parent="." unique_id=1953641202]
 z_index = 2
 offset_left = -540.0
-offset_top = 64.0
+offset_top = -15.0
 offset_right = 1546.0
 offset_bottom = 141.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oyk6k")

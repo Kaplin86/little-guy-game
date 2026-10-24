@@ -41,7 +41,6 @@ func _process(delta):
 	
 	navAgent.target_position = TargetLocation
 	var pos = navAgent.get_next_path_position()
-	print(pos)
 	velocity = global_position.direction_to(pos) * (min(speed * delta,global_position.distance_to(pos)) / delta)
 	move_and_slide()
 	
