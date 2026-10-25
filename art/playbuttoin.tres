@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://6l5viw46m4ch"]
+
+[ext_resource type="Texture2D" uid="uid://d13ogaxuy6w4r" path="res://art/play1.png" id="1_0le0n"]
+[ext_resource type="Texture2D" uid="uid://dy5xbghhufw24" path="res://art/play2.png" id="2_l1gqe"]
+
+[resource]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("1_0le0n")
+frame_1/texture = ExtResource("2_l1gqe")
+frame_1/duration = 1.0
