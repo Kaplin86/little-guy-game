@@ -11,7 +11,7 @@ enum direction {East,West,North,South}
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
-	if body is KidNode or body is BigRobertNode:
+	if body is KidNode or body is BigRobertNode or (body.get_parent() is Lawnmower and body.get_parent() != self):
 		run()
 
 func run():
@@ -19,12 +19,17 @@ func run():
 
 var speed = 180
 func _process(delta: float) -> void:
-	if CurrentDir in [direction.East,direction.North]: flip_h = false
-	if CurrentDir in [direction.West,direction.South]: flip_h = true
-	
+	if CurrentDir in [direction.East,direction.North]: 
+		flip_h = false
+		$CPUParticles2D.scale = Vector2.ONE
+	if CurrentDir in [direction.West,direction.South]: 
+		flip_h = true
+		$CPUParticles2D.scale = Vector2(-1,1)
+	$CPUParticles2D.emitting = running
 	
 	if !Engine.is_editor_hint():
 		if running:
+			
 			speed *= 1 + delta * 2 
 			var dir = Vector2.ZERO
 			match CurrentDir:

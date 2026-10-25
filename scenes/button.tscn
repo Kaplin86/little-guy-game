@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cek7554c57an1"]
+
+[ext_resource type="Script" uid="uid://0ekqc0pu7hot" path="res://code/button.gd" id="1_3q610"]
+[ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="2_1bdt2"]
+[ext_resource type="Texture2D" uid="uid://bhk17b6cu43hs" path="res://art/buttonpressed.tres" id="2_i7y4x"]
+[ext_resource type="Texture2D" uid="uid://yayw6s0vsqxm" path="res://art/button.tres" id="3_1bdt2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnf24"]
+shader = ExtResource("2_1bdt2")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 2.0000000298024
+shader_parameter/alpha_threshold = 0.0
+shader_parameter/outline_samples = 4
+shader_parameter/shade_color = Color(1, 1, 1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ff6s"]
+radius = 55.03635
+
+[node name="Button" type="Area2D" unique_id=1413362241 node_paths=PackedStringArray("relevantspikes")]
+z_index = -1
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("1_3q610")
+relevantspikes = [null]
+
+[node name="Pressed" type="Sprite2D" parent="." unique_id=1131261629]
+visible = false
+material = SubResource("ShaderMaterial_vnf24")
+position = Vector2(0, 10)
+texture = ExtResource("2_i7y4x")
+
+[node name="Big" type="Sprite2D" parent="." unique_id=2077442428]
+material = SubResource("ShaderMaterial_vnf24")
+texture = ExtResource("3_1bdt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182363324]
+position = Vector2(1, -10)
+shape = SubResource("CircleShape2D_6ff6s")

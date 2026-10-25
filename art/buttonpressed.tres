@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://bhk17b6cu43hs"]
+
+[ext_resource type="Texture2D" uid="uid://cidob75kano4w" path="res://art/platepressed1.png" id="1_2shkq"]
+[ext_resource type="Texture2D" uid="uid://dafh1sb1ed7kr" path="res://art/platepressed2.png" id="2_r60e8"]
+
+[resource]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("1_2shkq")
+frame_1/texture = ExtResource("2_r60e8")
+frame_1/duration = 1.0

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bn7qwaf5dwoww"]
 
 [ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="1_vbbpe"]
+[ext_resource type="Texture2D" uid="uid://d0bww608n5kx8" path="res://art/confetti.png" id="3_vbbpe"]
 [ext_resource type="Script" uid="uid://cqaa7mk2ofbie" path="res://code/lawnmower.gd" id="4_4v4ov"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wb0vq"]
@@ -25,10 +26,14 @@ frame_1/texture = SubResource("CompressedTexture2D_vbbpe")
 frame_1/duration = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a36lu"]
-size = Vector2(235, 197)
+size = Vector2(235, 174)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ff6s"]
 size = Vector2(83, 74)
+
+[sub_resource type="Gradient" id="Gradient_a36lu"]
+offsets = PackedFloat32Array(0, 0.7991453, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Icon" type="Sprite2D" unique_id=2055864157]
 material = SubResource("ShaderMaterial_wb0vq")
@@ -41,7 +46,7 @@ collision_layer = 15
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1469591148]
-position = Vector2(-1, -1)
+position = Vector2(-1, -4)
 shape = SubResource("RectangleShape2D_a36lu")
 
 [node name="KillArea" type="Area2D" parent="." unique_id=2046881975]
@@ -52,5 +57,23 @@ collision_mask = 15
 position = Vector2(12.5, 0)
 shape = SubResource("RectangleShape2D_6ff6s")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1048710045]
+modulate = Color(0.5882353, 0.85882354, 0.5686275, 1)
+show_behind_parent = true
+position = Vector2(-10, 14)
+emitting = false
+amount = 20
+texture = ExtResource("3_vbbpe")
+lifetime = 0.34
+emission_shape = 3
+emission_rect_extents = Vector2(1, 18.945)
+direction = Vector2(-1, -1)
+spread = 31.76
+initial_velocity_min = 431.37
+initial_velocity_max = 431.37
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_a36lu")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dko4imgsdjshj" path="res://code/camera.gd" id="5_522sc"]
 [ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="6_a82vw"]
 [ext_resource type="Script" uid="uid://dy34ao0rh8fv6" path="res://code/navregionrebaker.gd" id="6_wb0vq"]
+[ext_resource type="Texture2D" uid="uid://be5k6r2ca5g5w" path="res://art/fence.tres" id="7_ah4rv"]
 [ext_resource type="Texture2D" uid="uid://b0ljob2iyjfi" path="res://art/anti-robotbrocoli1.png" id="7_t14x3"]
 [ext_resource type="Texture2D" uid="uid://cv25o1b1pwy7y" path="res://art/fence1.png" id="8_ahaer"]
 [ext_resource type="Texture2D" uid="uid://6bna7gh86st2" path="res://art/fence2.png" id="9_wt4k6"]
@@ -19,15 +20,15 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32
 outlines = Array[PackedVector2Array]([PackedVector2Array(-559, -42, -557, 1172, 1596, 1180, 1596, -44)])
 agent_radius = 40.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlghm"]
+size = Vector2(1239, 30)
+
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_mltvj"]
 frames = 2
 speed_scale = 3.0
 frame_0/texture = ExtResource("8_ahaer")
 frame_1/texture = ExtResource("9_wt4k6")
 frame_1/duration = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlghm"]
-size = Vector2(1239, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb0vq"]
 size = Vector2(38, 442.5)
@@ -103,6 +104,7 @@ position = Vector2(789, 1015)
 
 [node name="Sprite2D" parent="." unique_id=1160882992 instance=ExtResource("4_ah4rv")]
 position = Vector2(-379, 723)
+destinationScene = "res://scenes/levels/level4.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=381146985 node_paths=PackedStringArray("target")]
 position = Vector2(516, 524)
@@ -136,7 +138,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("7_ah4rv")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D4" unique_id=1354250959]
@@ -282,7 +284,7 @@ offset_bottom = 654.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("7_ah4rv")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D7" unique_id=1513923051]

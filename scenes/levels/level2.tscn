@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4p7jvc4k80oc" path="res://scenes/player.tscn" id="4_b0vvs"]
 [ext_resource type="PackedScene" uid="uid://de5nueqstwyst" path="res://scenes/flag.tscn" id="5_oyk6k"]
 [ext_resource type="Script" uid="uid://dko4imgsdjshj" path="res://code/camera.gd" id="6_gycjm"]
-[ext_resource type="Texture2D" uid="uid://cv25o1b1pwy7y" path="res://art/fence1.png" id="7_k0mew"]
-[ext_resource type="Texture2D" uid="uid://6bna7gh86st2" path="res://art/fence2.png" id="8_b0vvs"]
+[ext_resource type="Texture2D" uid="uid://be5k6r2ca5g5w" path="res://art/fence.tres" id="8_b0vvs"]
 [ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="9_oyk6k"]
 [ext_resource type="Texture2D" uid="uid://bhmduoula4lsi" path="res://art/broccoli1.png" id="10_gycjm"]
 [ext_resource type="Texture2D" uid="uid://b0ljob2iyjfi" path="res://art/anti-robotbrocoli1.png" id="11_gycjm"]
@@ -23,16 +22,10 @@ shader_parameter/shade_color = Color(1, 1, 1, 0)
 size = Vector2(71, 67)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8a7m2"]
-vertices = PackedVector2Array(-547.0078, 1162.0313, -547.28906, 990, -199, 990, -199, 996, 1586, 1169.9609, -141, 996, 54, 275, 87, 275, 87, 312, 47, 312, 47, 399, 102, 399, 102, 415, 51, 415, 51, 477, -223, 477, -548.5703, 219, 1036, 477, 142, 477, 142, 447, 193, 447, 193, 360, 138, 360, 138, 334, 178, 334, 178, 247, 145, 247, 145, 219, 1586, 219, 360, 782, 1586, 782, 619, 940, -141, 990, 619, 990, -141, 940, -141, 733, -199, 733, -199, 940, -547.3906, 940, -223, 527, 54, 219, 1586, 732, 1036, 527, 360, 732, 1586, 169, -548.64844, 169, -548.97656, -32, 1586, -33.992188)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(10, 13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(29, 30, 4, 31), PackedInt32Array(5, 32, 33, 4), PackedInt32Array(31, 34, 35, 29), PackedInt32Array(36, 37, 38, 16, 39), PackedInt32Array(16, 40, 6, 9), PackedInt32Array(21, 24, 25, 28, 17), PackedInt32Array(17, 20, 21), PackedInt32Array(17, 28, 41, 42), PackedInt32Array(42, 41, 43, 39), PackedInt32Array(16, 9, 10), PackedInt32Array(4, 33, 31), PackedInt32Array(43, 29, 35, 39), PackedInt32Array(39, 35, 36), PackedInt32Array(16, 15, 39), PackedInt32Array(44, 45, 46, 47)])
+vertices = PackedVector2Array(-497.09375, 1112.2188, -497.21094, 1040, -249, 1040, -249, 1046, 1536, 1119.7734, -91, 1046, -3, 269, -3, 427, -273, 427, -498.4922, 269, -497.46875, 890, -273, 577, -249, 890, -249, 683, -91, 683, 1086, 577, 310, 682, 1086, 427, 243, 427, 243, 310, 1536, 269, 228, 310, 228, 269, 1536, 682, 310, 832, -91, 890, 669, 890, 1536, 832, 669, 1040, -91, 1040, 1536, 119, -498.72656, 119, -498.89063, 17.9375, 1536, 16.046875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(14, 13, 11, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(19, 21, 22, 20), PackedInt32Array(17, 20, 23, 15), PackedInt32Array(15, 23, 16), PackedInt32Array(14, 16, 24, 25), PackedInt32Array(26, 25, 24, 27), PackedInt32Array(26, 27, 4, 28), PackedInt32Array(28, 4, 5, 29), PackedInt32Array(30, 31, 32, 33)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-559, -42, -557, 1172, 1596, 1180, 1596, -44)])
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_mltvj"]
-frames = 2
-speed_scale = 3.0
-frame_0/texture = ExtResource("7_k0mew")
-frame_1/texture = ExtResource("8_b0vvs")
-frame_1/duration = 1.0
+agent_radius = 60.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlghm"]
 size = Vector2(1239, 30)
@@ -77,6 +70,7 @@ position = Vector2(-263, 1019)
 
 [node name="Sprite2D" parent="." unique_id=1160882992 instance=ExtResource("5_oyk6k")]
 position = Vector2(-379, 723)
+destinationScene = "res://scenes/levels/level3.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=381146985 node_paths=PackedStringArray("target")]
 position = Vector2(516, 524)
@@ -189,7 +183,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("8_b0vvs")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" unique_id=746217684]
@@ -212,7 +206,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("8_b0vvs")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D2" unique_id=909269866]
@@ -235,7 +229,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("8_b0vvs")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D3" unique_id=614105474]
@@ -258,7 +252,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("8_b0vvs")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D4" unique_id=1354250959]
@@ -281,7 +275,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("8_b0vvs")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D5" unique_id=2105628618]
@@ -305,7 +299,7 @@ offset_bottom = 368.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("8_b0vvs")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D6" unique_id=914275329]
