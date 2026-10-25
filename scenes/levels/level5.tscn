@@ -75,6 +75,7 @@ position = Vector2(789, 1015)
 
 [node name="Sprite2D" parent="." unique_id=1160882992 instance=ExtResource("4_iyn63")]
 position = Vector2(-379, 723)
+destinationScene = "res://scenes/levels/level6.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=381146985 node_paths=PackedStringArray("target")]
 position = Vector2(516, 524)
