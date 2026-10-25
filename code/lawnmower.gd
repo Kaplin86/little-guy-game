@@ -13,8 +13,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if body is KidNode or body is BigRobertNode or (body.get_parent() is Lawnmower and body.get_parent() != self):
 		run()
+		
 
 func run():
+	if running == false:
+		$FreesoundCommunityLawnmower68794.playing=true
 	running = true
 
 var speed = 180
@@ -48,3 +51,6 @@ func _on_kill_area_body_entered(body: Node2D) -> void:
 	if running:
 		if body.is_in_group("brocolli"):
 			body.queue_free()
+			var newNom = $Nom3.duplicate()
+			add_child(newNom)
+			newNom.play()

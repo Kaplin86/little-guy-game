@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://4msrew364ip"]
+
+[ext_resource type="AudioStream" uid="uid://vvwvat2lrbkw" path="res://music/Magic%20Scout%20-%20Farm.mp3" id="1_6fpsw"]
+[ext_resource type="Script" uid="uid://cqvb1a0jq6kl3" path="res://code/transition.gd" id="1_ac2yd"]
+
+[node name="Node" type="Node" unique_id=542549046]
+script = ExtResource("1_ac2yd")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1599639800]
+z_index = 6
+
+[node name="Magic_20Scout_20_20Farm" type="AudioStreamPlayer" parent="." unique_id=1493780763]
+stream = ExtResource("1_6fpsw")
+volume_db = -7.298
+autoplay = true

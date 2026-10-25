@@ -18,4 +18,5 @@ func win():
 	$CanvasLayer/Node2D/CPUParticles2D.emitting = true
 	$"CanvasLayer/Node2D/KidsCheering".play()
 	await get_tree().create_timer(5).timeout
-	get_tree().change_scene_to_packed(load(destinationScene))
+	GlobalNode.transitionToScene(destinationScene)
+	#get_tree().change_scene_to_packed(load())

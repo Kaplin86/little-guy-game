@@ -3,6 +3,8 @@
 [ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="1_vbbpe"]
 [ext_resource type="Texture2D" uid="uid://d0bww608n5kx8" path="res://art/confetti.png" id="3_vbbpe"]
 [ext_resource type="Script" uid="uid://cqaa7mk2ofbie" path="res://code/lawnmower.gd" id="4_4v4ov"]
+[ext_resource type="AudioStream" uid="uid://caaqicl8dcapn" path="res://sfx/freesound_community-lawnmower-68794.mp3" id="4_idd1y"]
+[ext_resource type="AudioStream" uid="uid://4g7xa4jves62" path="res://sfx/nom3.mp3" id="5_idd1y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wb0vq"]
 shader = ExtResource("1_vbbpe")
@@ -73,6 +75,15 @@ initial_velocity_min = 431.37
 initial_velocity_max = 431.37
 scale_amount_min = 0.5
 color_ramp = SubResource("Gradient_a36lu")
+
+[node name="FreesoundCommunityLawnmower68794" type="AudioStreamPlayer2D" parent="." unique_id=288951943]
+position = Vector2(11, 2)
+stream = ExtResource("4_idd1y")
+
+[node name="Nom3" type="AudioStreamPlayer2D" parent="." unique_id=1298023515]
+position = Vector2(10, -1)
+stream = ExtResource("5_idd1y")
+volume_db = 4.561
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

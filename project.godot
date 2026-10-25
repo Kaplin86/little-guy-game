@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="jamegam-jamgame"
-run/main_scene="uid://cr6nih8flfxh8"
+run/main_scene="uid://t35lolgprdqd"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalNode="*uid://4msrew364ip"
 
 [display]
 

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b0wdtyb7kdemf" path="res://art/logo2.png" id="4_4rr2b"]
 [ext_resource type="Texture2D" uid="uid://6l5viw46m4ch" path="res://art/playbuttoin.tres" id="5_7af2g"]
 [ext_resource type="Texture2D" uid="uid://be5k6r2ca5g5w" path="res://art/fence.tres" id="5_b3w7a"]
+[ext_resource type="Script" uid="uid://byrueyks3ov1t" path="res://code/mainmenubutton.gd" id="6_81wt4"]
 [ext_resource type="Texture2D" uid="uid://bhmduoula4lsi" path="res://art/broccoli1.png" id="6_hiwto"]
 [ext_resource type="Texture2D" uid="uid://b0ljob2iyjfi" path="res://art/anti-robotbrocoli1.png" id="7_6civk"]
 [ext_resource type="PackedScene" uid="uid://kg27lwxinu1m" path="res://scenes/kid.tscn" id="7_w65of"]
@@ -107,6 +108,7 @@ theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = SubResource("StyleBoxTexture_a36lu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7af2g")
 theme_override_styles/hover = SubResource("StyleBoxTexture_81wt4")
+script = ExtResource("6_81wt4")
 metadata/_edit_use_anchors_ = true
 
 [node name="BACK" type="Parallax2D" parent="." unique_id=1947701327]
@@ -938,3 +940,5 @@ region_rect = Rect2(-164.6626, -122.46506, 1655.7101, 1477.2275)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FRONT/Broc32" unique_id=172717142]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_kcc3o")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

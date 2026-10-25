@@ -113,6 +113,7 @@ position = Vector2(789, 1015)
 
 [node name="Sprite2D" parent="." unique_id=1160882992 instance=ExtResource("4_ricaf")]
 position = Vector2(-391, 508)
+destinationScene = "res://scenes/title.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=381146985 node_paths=PackedStringArray("target")]
 position = Vector2(516, 524)

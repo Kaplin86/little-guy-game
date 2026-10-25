@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="2_1bdt2"]
 [ext_resource type="Texture2D" uid="uid://bhk17b6cu43hs" path="res://art/buttonpressed.tres" id="2_i7y4x"]
 [ext_resource type="Texture2D" uid="uid://yayw6s0vsqxm" path="res://art/button.tres" id="3_1bdt2"]
+[ext_resource type="AudioStream" uid="uid://b5t4vqesc6wpy" path="res://sfx/universfield-click-button-140881.mp3" id="5_1bdt2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vnf24"]
 shader = ExtResource("2_1bdt2")
@@ -36,3 +37,7 @@ texture = ExtResource("3_1bdt2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182363324]
 position = Vector2(1, -10)
 shape = SubResource("CircleShape2D_6ff6s")
+
+[node name="UniversfieldClickButton140881" type="AudioStreamPlayer2D" parent="." unique_id=1123761352]
+position = Vector2(-1, -7)
+stream = ExtResource("5_1bdt2")
