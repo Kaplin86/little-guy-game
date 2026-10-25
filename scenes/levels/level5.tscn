@@ -8,8 +8,6 @@
 [ext_resource type="Script" uid="uid://dy34ao0rh8fv6" path="res://code/navregionrebaker.gd" id="6_4x4hb"]
 [ext_resource type="Texture2D" uid="uid://be5k6r2ca5g5w" path="res://art/fence.tres" id="7_fmais"]
 [ext_resource type="Script" uid="uid://dety7im72jkkm" path="res://code/spikes.gd" id="7_vnf24"]
-[ext_resource type="Texture2D" uid="uid://cv25o1b1pwy7y" path="res://art/fence1.png" id="8_72xjh"]
-[ext_resource type="Texture2D" uid="uid://6bna7gh86st2" path="res://art/fence2.png" id="9_xrw0o"]
 [ext_resource type="Shader" uid="uid://cyo45spgwni7n" path="res://shaders/outline.gdshader" id="10_4r5lo"]
 [ext_resource type="Texture2D" uid="uid://cjf3i46gjb0nj" path="res://art/spikeon.tres" id="11_sd6f7"]
 [ext_resource type="PackedScene" uid="uid://cek7554c57an1" path="res://scenes/button.tscn" id="13_pm1y0"]
@@ -33,13 +31,6 @@ shader_parameter/shade_color = Color(1, 1, 1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlghm"]
 size = Vector2(1239, 30)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_mltvj"]
-frames = 2
-speed_scale = 3.0
-frame_0/texture = ExtResource("8_72xjh")
-frame_1/texture = ExtResource("9_xrw0o")
-frame_1/duration = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb0vq"]
 size = Vector2(38, 442.5)
@@ -149,7 +140,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("7_fmais")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D8" unique_id=1758424773]
@@ -172,7 +163,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("7_fmais")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D5" unique_id=2105628618]
@@ -196,7 +187,7 @@ offset_bottom = 654.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("AnimatedTexture_mltvj")
+texture = ExtResource("7_fmais")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D6" unique_id=914275329]
